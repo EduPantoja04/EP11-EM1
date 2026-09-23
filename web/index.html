@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RRHH · Marcaciones</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">Recursos Humanos</p>
+      <h1>Registro de marcaciones</h1>
+    </div>
+    <p class="subtitle">Ingreso y salida programados frente al horario real.</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="panel-head">
+        <h2 id="form-title">Nueva marcación</h2>
+        <button type="button" id="btn-cancelar" class="ghost hidden">Cancelar edición</button>
+      </div>
+      <form id="form-marcacion">
+        <label>Código de empleado
+          <input name="codigo_empleado" required maxlength="20" placeholder="EMP001">
+        </label>
+        <label>Nombre completo
+          <input name="nombre_empleado" required maxlength="120" placeholder="Ana Pérez">
+        </label>
+        <label>Fecha
+          <input name="fecha" type="date" required>
+        </label>
+        <label>Ingreso programado
+          <input name="hora_ingreso_programada" type="time" required>
+        </label>
+        <label>Ingreso real
+          <input name="hora_ingreso_real" type="time" required>
+        </label>
+        <label>Salida programada
+          <input name="hora_salida_programada" type="time" required>
+        </label>
+        <label>Salida real
+          <input name="hora_salida_real" type="time">
+        </label>
+        <label class="wide">Observación
+          <input name="observacion" maxlength="500" placeholder="Opcional">
+        </label>
+        <div class="actions wide">
+          <button type="submit" id="btn-guardar">Registrar</button>
+        </div>
+      </form>
+      <p id="form-message" class="message" role="status"></p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Marcaciones registradas</h2>
+        <form id="form-filtro" class="filters">
+          <input name="empleado" placeholder="Empleado (EMP001)">
+          <input name="fecha" type="date">
+          <button type="submit">Filtrar</button>
+          <button type="button" id="btn-limpiar" class="ghost">Ver todas</button>
+        </form>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Empleado</th>
+              <th>Fecha</th>
+              <th>Ingreso</th>
+              <th>Salida</th>
+              <th>Estado</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tabla"></tbody>
+        </table>
+      </div>
+      <p id="lista-message" class="message"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

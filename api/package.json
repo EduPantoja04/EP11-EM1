@@ -1,0 +1,14 @@
+{
+  "name": "rrhh-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API REST de marcaciones de personal",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "pg": "^8.13.3"
+  }
+}
